@@ -4,7 +4,7 @@
       layout:decorate="template">
 <head>
     <meta charset="UTF-8">
-    <title>Products</title>
+    <title>Login Page</title>
     <link rel="stylesheet" type="text/css" href="webjars/bootstrap/5.3.3/css/bootstrap.min.css">
 </head>
 <body>
@@ -12,7 +12,13 @@
     <div class="m-3">
         <div class="card">
             <div class="card-body">
-                <h1>Products</h1>
+                <ul class="list-group">
+                    <li class="list-group-item" th:each="url:${urls}">
+                        <div class="d-grid">
+                            <a class="btn btn-outline-info" th:text="${url.key}" th:href="${url.value}"></a>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
